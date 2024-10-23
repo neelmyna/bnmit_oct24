@@ -1,0 +1,185 @@
+https://github.com/neelmyna/bnmit_oct24
+
+1. Create github account and login
+2. Create new Repo Name: <yourname_python_oct24>
+3. Create folder software in C drive and dedicated folders to save the installer files
+4. Download the following Apps
+	1. notepad++ (faster and easier way to make notes)
+	2. vs code (easiest IDE to use)
+	3. mysql
+	4. python
+5. Create PAT in github
+	Click on Top Right profile icon
+	In the menu (pops up), scroll down and Click settings
+	In the new page, Scroll down and Click Developer settings (bottom left)
+	In the new page, on top left, Click Personal Access Tokens -> Select Tokens(Classic)
+	Now Click Generate new Token -> Select Generate new Token(Classic)
+	Enter password if prompted
+	Select Expiry -> NO Expiry
+	Leave all other settings as it is. Scroll Down and Click Generate Token
+	Copy the PAT and mail/whatsApp it to your self
+6. Create a folder learning
+	sub folder python_learning
+	Go inside this folder and open the command prompt
+7. Download and install git
+8.  git config --global username "<your_github_username>"
+	git config --global email "<your_email>"
+9. If we wish to download somebody's (anybody's) repo then the command is:
+	git clone <git_repo_url>
+9. To Sync our Repo and the repo folder in our machine(laptop) the command is:
+	git clone https://PAT@github.com/<username>/<repo_name>
+	
+Why in Pyhton there is no implicit cast?
+-----------------------------------------
+# Program to check if a number if Even
+
+print('Enter a number to check if it is Even: ')
+input_num = int(input())
+
+if input_num % 2 == 0:
+    print('Input number', input_num, ' is Even')
+--------------------------------------------
+# Program to check if a number if Even or not.
+
+print('Enter a number to check if it is Even: ')
+input_num = int(input())
+
+if input_num % 2 == 0:
+    print('Input number', input_num, ' is Even')
+else:
+    print('Input number', input_num, ' is not Even')
+------------------------------------------------
+# Program to check if a number if Even or Odd.
+
+print('Enter a number to check if it is Even: ')
+input_num = int(input())
+
+if input_num % 2 == 0:
+    print('Input number', input_num, ' is Even')
+else:
+    print('Input number', input_num, ' is Odd')
+---------------------------------------------
+'''
+Accept average score from the user and print the result as follows.
+0  - 50 Fail
+51 - 75 SC
+76 - 90 FC
+91 - 100 Distinction
+Also check for Invalid score
+'''
+
+average_score = int(input('Enter your average score to print your result: '))
+
+if average_score >= 0 and average_score <= 50:
+    print('Fail')
+elif  average_score <= 75:
+    print('Second Class')
+elif average_score <= 90:
+    print('First Class')
+elif average_score <= 100:
+    print('Distinction')
+else:
+    print('Invalid Input')
+
+# x++ != y && --y > z || y++ <= x
+-----------------------------------------------------
+i = -1
+i -= -1 # i = i - (-1) = -1 + 1 = 0
+print(i)
+------------------------------------
+p4.py
+import random
+
+player_number = int(input('Enter a number of your choice between 0 to 9: '))
+
+system_number = random.randint(9, 10)
+print(system_number)
+
+if player_number == system_number:
+    print('You are crorepati')
+else:
+    print('You are Roadpati')
+----------------------------------------------
+ASSIGNMENTS:
+5. Check if the year is Leap year
+6. Check if the input digit is Composite number
+7. Check if the character is only a alpha-numeric
+
+Examples of Functions:
+print()
+len()
+type()
+sorted()
+max()
+min()
+
+When to call a function as method:
+obj.method()
+str.upper()
+list1.sort()
+
+The range() function
+range(end_value)
+range(start_value, end_value)
+range(start_value, end_value, increment)
+
+*** In Python we do not have the concept of Function Overloading
+range(10)
+0, 1, .... 9 [default increment is 1]
+range(2, 15)
+2, 3, ..... 14 [default increment is 1]
+range(5, 25, 3)
+5, 8, 11, 14, 17, 20, 23 [manual/over-ridden increment is 3]
+range(5, 20, -1)
+Returns nothing
+range(25, 2, -2)
+25, 23, 21, .... 3 [manual increment of -2 or decrement of 2]
+
+for i in range(1, 21):
+    i += 2
+    print(i)
+# 3, 6, 9, .... 18 (our prediction)
+# 3, 4, 5, ... 22 (actual o/p)
+
+O/P Formating using Format specifiers in C
+%f %s %d %x %X %o
+%4d
+%-5d
+%06d
+
+p8.py
+Print the Math tabl of a number for multiples upto 20
+input_number = int(input('Enter a number to print its Math table: '))
+
+for i in range(1, 21):
+    #print(input_number, '*', i, '=', input_number * i)
+    print('%2d * %02d = %03d'%(input_number, i, input_number*i))
+
+'''
+12 * 1 = 12
+12 * 2 = 24
+'''
+-------------------------------------------------
+9. Accept a number and find sum of digits of the number
+10.Accept a number and find count the number of digits in it.
+11.Accept a number and find biggest/smallest digit in the number
+12.Find sum of Even/Odd digits in the number
+13.Find the frequency of a digit in the number
+
+14.Find sum of Odd placed Even digits in the number
+15.Find 2nd smallest digit in the number
+16.Accept a number from user and find her lucky digit, where the lucky digit is found by finding sum of the digits of the number until a sigle digit number is reached. Thus if the sum is not a single digit number, apply the logic of finding sum of the digits on it.
+input_number = int(input('Enter a number to find your lucky digit: '))
+
+sum_of_digits = 0
+temp_number = input_number
+
+while temp_number > 0:
+    remainder_digit = temp_number % 10
+    temp_number = temp_number // 10
+    sum_of_digits += remainder_digit
+    if temp_number == 0 and sum_of_digits >= 10:
+        temp_number = sum_of_digits
+        sum_of_digits = 0
+print(f'Your lucky digit is {sum_of_digits}')
+--------------------------------------------------------
