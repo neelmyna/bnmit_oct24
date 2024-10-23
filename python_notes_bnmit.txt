@@ -183,3 +183,147 @@ while temp_number > 0:
         sum_of_digits = 0
 print(f'Your lucky digit is {sum_of_digits}')
 --------------------------------------------------------
+HOW TO SOLVE A PROBLEM
+
+1. Understand the problem. Recognise the required data (I/P). Isolate/remove the unwanted information and data. Focus on the relevant information. Accertain what should be the O/P.
+Outcome: We know the I/P, O/P and the relevant information
+
+2. Build the solution using trial and error technique or mathematical formula or using a specific Algorithm. In this step we must not even think of programming.
+OutCome: We know the what is the solution(s)
+
+3. Write the Algorithm. Every step of the algorithm must be simple, unambigious and finite.
+OutCome: We have a clear visible solution as a procedure
+
+4. Write the Fake-code (Pseudocode) 
+OutCome: You have a solution that looks like a code
+
+5. Code it (via the languiage syntax)
+
+6. Good coding practices, naming standards, documentation, unit-testing
+
+7. Efficiency of algorithms, Optimization, development, DEvOps, Cyber Security, Installation, Maintainance
+
+SRP
+i++
+j--
+a[i] = b[j]
+b[j]++
+
+a[++i] = b[--j]++
+
+Write a program in Python to check if a number is Perfect Square
+
+45   6.6   6   36
+121  11.0  11  121
+
+1. Read N
+2. find ROOT_WITH_PRECISION of N
+3. find floor of ROOT_WITH_PRECISION as ROOT
+4. if ROOT * ROOT is N
+	then declare N as P S
+	else declare N as not a P S
+	
+Read N
+root = square_root(N)
+root = floor(root)
+if root * root is N then
+	print N is P S
+else
+	print N is not a P S
+	
+string
+
+1111 1111
+f    f
+ff
+15*16(1) + 15*16(0)
+=240 + 15
+=255
+
+10
+100
+1011
+
+17. Accept a string and access all the characters one by one
+my_string = input('Enter a place name: ')
+
+print(f'Type of {my_string} is {type(my_string)}')
+
+for character in my_string: # for each loop
+    print(f'{character}, Type={type(character)}')
+
+first_character = chr(my_string[0])
+print(f'first charatcer = {first_character}, Type = {type(character)}')
+----------------------------------------------
+18.
+my_string = input('Enter a place name: ') # mumbai
+
+my_string = my_string.upper()
+print(f'my_string = {my_string}')
+#print(f'string1 = {string1}')
+
+# print(f'String in Upper case = {my_string.upper()}')
+----------------------------------------
+19.
+number1 = 15
+number2 = 25.5
+
+print(f'type of number1 = {type(number1)}')
+print(f'type of number2 = {type(number2)}')
+
+print(number1.bit_count)
+print(number1.__sizeof__())
+print(number1.__eq__(15))
+-----------------------------------------
+20.
+my_str = 'bengaluru'
+
+print(my_str[0])   # b
+print(my_str[1])   # e
+print(my_str[-1])   # u
+print(my_str[-2])   # r
+print(my_str[-12])   # IndexError
+print(my_str[100]) # IndexError
+-----------------------------------------------
+21.
+# String Slicing
+
+my_str = 'bengaluru'
+print(my_str[:])
+print(my_str[::])
+
+print(my_str[1:8])   # engalur
+print(my_str[2:6:2]) # na
+print(my_str[::2]) # bnauu
+print(my_str[::-2]) # uuanb
+print(my_str[::-1]) # urulagneb
+--------------------------------------------
+22.
+# String Slicing
+
+my_str = 'bengaluru'
+
+print(my_str[:20:1]) # No error
+print(my_str[20:-20:1]) # empty string
+print(my_str[20:-20:1]) # complete string in reverse
+---------------------------------------------------------
+23.
+my_str = 'banashankari'
+
+print(my_str.find('s')) # 4
+print(my_str.find('m')) # -1
+print(my_str.find('shankari')) # 4
+print(my_str.find('a', 3)) # 3
+print(my_str.find('na', 1, 4)) # 2
+print(my_str.find('na', 1, 3)) # -1
+----------------------------------------------------
+24.
+my_str = 'banashankari'
+
+print(my_str.index('s')) # 4
+print(my_str.index('shankari')) # 4
+print(my_str.index('a', 3)) # 3
+print(my_str.index('na', 1, 4)) # 2
+print(my_str.index('na', 1, 3)) # error
+print(my_str.index('m')) # error
+---------------------------------------------------
