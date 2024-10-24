@@ -1,0 +1,110 @@
+PYTHON DATA STRUCTURES
+
+SL-NO   DATA-STRUCTURE	ORDERED		MUTABLE		DUPLICATES
+1		list			Yes			Yes			Yes
+2		tuple			Yes			No			Yes
+3		dictionary		Yes			Yes			No
+4		set				No			Yes			No
+
+PYTHON LIST
+* List is a DS
+* Python List grows and shrinks dynamically
+* Pyhton List is an Object
+* List can hold same type of Values or different Types
+* List is mutable 
+* List can have list as its elements (Multi dimentional)
+* List index starts from Zero
+* The append() inserts an element to the list at the end
+* Insert() takes 2 args, 1st is the index at which new element to be inserted, 2nd arg is the element
+
+l1 = l2
+l1 = list(l2)
+
+numbers = [3, 7, 19, 11, 13, 5, 17]
+
+print(numbers)
+
+print(numbers.count(7))
+print(numbers.count(27))
+numbers.reverse()
+print(numbers)
+print(sorted(numbers))
+print(numbers)
+print(numbers.sort())
+print(numbers)
+--------------------------
+list1  = [29, 23, 19, 11, 13, 5, 17, 37]
+list2 = [3, 7, 31, 2]
+list3 = [43, 41, 47]
+
+l1 = [1 ,2 ,3]
+l2 = [1 ,2 ,3]
+
+print(list1 + list2)
+print(list2 > list1)
+list1.extend(list2)
+print(list1)
+list2.insert(2, list3)
+print(list2)
+print(l1.__eq__(l2))
+l1.append(input())
+l2.append(input())
+print(l1 == l2)
+----------------------------------
+Pythonic Syntax to swap 2 numbers
+
+x = [5, 10]
+y = [9, 3]
+print('Before Swapping:\n X =', x, 'Y =', y)
+x, y = y, x
+print('After swapping:\n X =', x, 'Y =', y)
+---------------------------------
+names = input().split(',')
+print(names)
+new_names = ' '.join(names)
+print(new_names)
+------------------------------
+names = [input('Enter space seperated names: ').split()]
+print(names)
+-------------------------
+import sys
+
+numbers = []
+for i in range(1, len(sys.argv)):
+    numbers.append(int(sys.argv[i]))
+print(numbers)
+
+strings = [str(element) for element in numbers]
+print(strings)
+
+even_numbers = [element for element in numbers if element % 2 == 0]
+print(even_numbers)
+---------------------------------------
+import sys
+
+strings = sys.argv
+
+print(strings)
+numbers = [int(num) for num in strings if num.isnumeric()]
+print(numbers)
+--------------------------------------
+num1 = 23
+num2 = 0o23
+num3 = 0xab
+
+print('%d  %o  %x  %X'%(num1, num1, num1, num1))
+print('%d  %o  %x  %X'%(num2, num2, num2, num2))
+print('%d  %o  %x  %X'%(num3, num3, num3, num3))
+--------------------------------------------------
+l1 = [2, 3, 5]
+
+print(l1)
+del l1[0]
+print(l1)
+del l1
+print(l1)
+----------------------------------------
+
+
+
+

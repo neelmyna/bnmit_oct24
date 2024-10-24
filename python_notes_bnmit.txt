@@ -183,6 +183,7 @@ while temp_number > 0:
         sum_of_digits = 0
 print(f'Your lucky digit is {sum_of_digits}')
 --------------------------------------------------------
+DAY3 WEDNESDAY 23-10-2024
 HOW TO SOLVE A PROBLEM
 
 1. Understand the problem. Recognise the required data (I/P). Isolate/remove the unwanted information and data. Focus on the relevant information. Accertain what should be the O/P.
@@ -327,3 +328,214 @@ print(my_str.index('na', 1, 4)) # 2
 print(my_str.index('na', 1, 3)) # error
 print(my_str.index('m')) # error
 ---------------------------------------------------
+Arithmetic Operators:
++ - * / %
+All are binary operators
+Used with Infix Notation
+Input are numbers
+Output is number
+Type of both the operands must be same
+2 + 17 - 15
+Arithmetic operators/operations have Left to Right Associtivity
+2 - 17 * 15
+The higher precedence operators/operations happens 1st, even though the operator appreas lately in the arithmetic expression. In the above expression, 17 * 15 is calculated 1st.
+The intermediatre result of an arithmetic expression is stored in the special purpose register named "Accumalator"
+
+34 + 45
+34 + (-45)
+
+25 + 25.55
+
+
+num1 = 34
+num2 = -45
+
+0010 0010
+1 * 2(5) + 2
+= 32 + 2 
+= 34
+
+HOW NEGATIVE NUMBER IS STORED:
+Now take -45
+take its absolute
+take its 2's Compliment
+0010 1101
+1101 0010
+
+1101 0011
+-1 * 2(7) + 1 * 2(6) + 16 + 3
+-128 + 64 + 19
+-64 + 19
+= -45
+
+25.
+Find the biggest of 3 distinct numbers
+
+input_num1 = int(input('Enter 1st number: '))
+input_num2 = int(input('Enter 2nd number: '))
+input_num3 = int(input('Enter 3rd number: '))
+
+if input_num1 > input_num2 and input_num1 > input_num3:
+    print(f'Num1 = {input_num1} is the biggest number')
+elif input_num2 > input_num3:
+    print(f'Num2 = {input_num21} is the biggest number')
+else:
+    print(f'Num3 = {input_num3} is the biggest number')
+------------------------------------------------
+26.
+Find sum of the series:
+n + n2 + n3 + upto 10 terms
+27.
+Find sum of the series:
+1 - n + n2 - n3 + upto M terms
+28.
+Find sum of the series:
+1 - n/3 + n2/5 - n4/7 + n8/9 ....
+(1<n<5 and 1<m<10)
+29.
+Print the Nth Prime number
+30.
+Check if the sum of Prime digits in a number is a Prime number
+31.
+Print Nth term of the following series:
+1 2 2 3 3 5 5 7 8 11 13 13
+---------------------------------------
+Find sum of Even Placed Odd Digits in a number
+1. Read NUM
+2. if NUM is less than 10 then
+	Print Result = NUM
+3. else do the following:
+	sum1 = 0 
+	sum2 = 0
+	count_of_digits = 0
+	switch = true
+	while NUM is greater than Zero:
+		remainder_digit = NUM // 10
+		if switch:
+			sum1 += remainder_digit
+		else:
+			sum2 += remainder_digit
+		switch = !switch
+		count_of_digits += 1
+	if count_of_digits % 2 == 0:	
+		Result = sum2
+	else:
+		Result = sum1
+---------------------------------------------------
+# Find sum of the series:
+# n - n2/3 + n4/5 - n8/7 .....
+# (1<n<5 and 1<m<10)
+'''
+n = int(input('Enter the N value: '))
+m = int(input('Enter numbers of terms in the series: '))
+# check for invalid input data
+if (n <= 1 or n >= 5) and (m <= 1 or m >= 10):
+    print('Invalid data entered')
+    exit('End of Program')
+
+# For valid input data:
+sum = 0
+for i in range(m):
+    sum += (n ** 2 ** i) / (2 * i + 1) * ((-1) ** i)
+    print('sum = ', sum, 'i = ', i)
+
+print('Sum of the terms is ', sum)
+--------------------------------------------------
+31.
+Find Nth term of combined series:
+1 2 2 3 3 5 5 7 8 11 13 13
+
+--------------------------------------------------
+32. Check if a number is a Palindrome
+33. Find sum of 1st and last digits of a number
+34. Print Nth digit of a number (starting from Left)
+35. Print Nth digit of a number (starting from Right)
+36. Accpet the number of Lines from the user and print the following shapes:
+37. Right Angled Triangle
+38. Equilateral Triangle
+39. Square
+40. Empty Square
+41. Empty Equilateral Triangle
+42. Empty Rhombus
+43. Hexagon
+44. X shape
+45. X shape inside Empty Square
+46. Pascal Triangle
+--------------------------------------------------
+47
+my_str = 'banashankari'
+sub_string = 'm'
+
+try:
+    print(my_str.index('s')) # 4
+    print(my_str.index(sub_string)) # error
+    print(my_str.index('shankari')) 
+except ValueError as e:
+    print(f'The sub string {sub_string} not found')
+    print(e.__str__())
+except:
+    print('Some error occured')
+--------------------------------------------------
+DAY4 THURSDAY 24-10-2024
+
+List DS in Python:
+
+It is simplest DS in Python
+All elements of the list are stored in contigious memory locations.
+The List grows and shrinks dynamically
+List is ordered (we use subscript [] to access list elements)
+List is mutable
+Lists are passed to functions by reference
+For the user, lookup(accessing), addition and deletion of elements is O(1) efficiency.
+We can create lists inside list
+list provides lot of methods such as append(), insert(), pop() remove(), sort()
+We can do list slicing
+-------------------------------
+numbers1 = []
+numbers2 = list()
+numbers3 = [1, 2, 3, 4, 5]
+numbers4 = list(numbers3)
+numbers5 = list(numbers3[1:4])
+
+print(numbers1)
+print(numbers2)
+print(numbers3)
+print(numbers4)
+print(numbers5)
+------------------------------------
+input_size = int(input('Enter size of the Array: '))
+numbers = []
+for i in range(input_size):
+    number = int(input())
+    numbers.append(number)
+    # numbers.append(int(input()))
+
+print('The array is: ', numbers)
+
+print(f'The array of size {input_size} is:')
+for number in numbers:
+    print(number, end='  ')
+----------------------------------------------------
+print('Enter space seperated numbers in a line')
+user_input = input()
+print(type(user_input))
+----------------------------------------------------
+numbers = [int(number) for number in user_input.split()]
+print('The array is: ', numbers)
+
+import sys
+# Command line Args
+# Find biggest and smallest numbers among the numbers given by user
+
+print('User given numbers are: ', sys.argv)
+
+----------------------------------------------------
+print('Enter space seperated numbers in a line')
+
+numbers = [int(number) for number in input().split()]
+print('The array is: ', numbers)
+
+
+----------------------------------------------------
+
+----------------------------------------------------

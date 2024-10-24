@@ -1,12 +1,9 @@
-my_str = 'banashankari'
-sub_string = 'm'
+import sys
 
-try:
-    print(my_str.index('s')) # 4
-    print(my_str.index(sub_string)) # error
-    print(my_str.index('shankari')) 
-except ValueError as e:
-    print(f'The sub string {sub_string} not found')
-    print(e.__str__())
-except:
-    print('Some error occured')
+print('User given numbers are: ', sys.argv)
+numbers = []
+
+for i in range(1, len(sys.argv)):
+    numbers.append(int(sys.argv[i]))
+
+print(f'User given numbers are: {numbers}')

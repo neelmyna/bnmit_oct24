@@ -1,0 +1,368 @@
+Python Features:
+
+Python is renowned for its simplicity and versatility. Some of the most important features of Python that contribute to its popularity and effectiveness are:
+
+1. Readable and Concise Syntax: Python's syntax is designed to be readable and straightforward. This helps new programmers learn the language quickly and makes code easier to maintain.
+
+2. Dynamic Typing: Python is dynamically typed, meaning you don't need to declare the type of a variable when you create it. This flexibility can make coding faster and more intuitive.
+
+3. Interpreted Language: Python code is executed line by line, which can simplify debugging and allows for interactive testing and development.
+
+4. Object-Oriented: Python supports object-oriented programming (OOP) principles, allowing you to create and manipulate objects, classes, inheritance, and encapsulation.
+
+5. Extensive Standard Library: Python comes with a large standard library that provides modules and functions for handling everything from file I/O to data manipulation and web development, reducing the need to write code from scratch.
+
+6. Cross-Platform Compatibility: Python is available on various platforms, including Windows, macOS, and Linux, which makes it versatile and suitable for cross-platform development.
+
+7. Large Ecosystem and Community: Python has a vast ecosystem of third-party libraries and frameworks (like NumPy, pandas, Django, and Flask) and a large, active community. This means you can find a library for almost any task and get support from other developers.
+
+8. Integrated Development Environments (IDEs): There are several IDEs and code editors available for Python, such as PyCharm, VSCode, and Jupyter Notebook, which enhance the development experience with features like debugging, code completion, and version control.
+
+9. Support for Multiple Programming Paradigms: Python supports procedural, object-oriented, and functional programming paradigms, giving you the flexibility to choose the best approach for your problem.
+
+10. Garbage Collection: Python automatically manages memory allocation and deallocation with its garbage collection mechanism, which helps prevent memory leaks and simplifies memory management.
+
+11. Extensive Documentation and Tutorials: Python has extensive documentation, tutorials, and resources available, making it easier to learn and find help when needed.
+
+12. Community and Open Source: Python is an open-source language with a strong community that contributes to its development and maintenance, ensuring it stays current and evolves to meet modern needs.
+
+These features collectively make Python a powerful and accessible language for a wide range of applications, from web development and data analysis to artificial intelligence and scientific computing.
+
+---------------------------------------------------
+PYTHONIC:
+
+"Pythonic" is a term used to describe code that follows the idiomatic practices and conventions of the Python programming language. Writing Pythonic code means adhering to the principles and styles that are considered best practices in Python, which often results in code that is clean, readable, and efficient.
+
+Here are some key characteristics of Pythonic code:
+
+1. READABILITY: Pythonic code is often easy to read and understand. It follows conventions and best practices that make the codebase approachable for other Python developers. The Zen of Python, which you can access by typing `import this` in a Python interpreter, provides guiding principles for writing Pythonic code, such as "Readability counts" and "Simple is better than complex."
+
+2. USE OF PYTHON’S BUILT-IN FEATURES: Pythonic code leverages Python's built-in functions and libraries. For example, using list comprehensions for simple transformations is often preferred over using explicit loops.
+
+   squares = [x**2 for x in range(10)]
+
+3. EFFICACY AND SIMPLICITY: Pythonic code tends to be concise and avoids unnecessary complexity. For example, using `enumerate` instead of manually keeping track of indices in a loop:
+
+   for index, value in enumerate(my_list):
+      print(index, value)
+
+4. DUCK TYPING: Pythonic code often embraces duck typing, meaning it focuses on what an object can do (its methods and behaviors) rather than its specific type. This allows for more flexible and reusable code.
+
+5. EXCEPTION HANDLING: Pythonic code uses exception handling for managing errors rather than relying on explicit error checks. For example, using `try` and `except` to handle potential exceptions:
+
+   try:
+       result = some_function()
+   except SomeException as e:
+       handle_error(e)
+
+6. IDIOMATIC CONSTRUCTS: Using idiomatic constructs like `with` for resource management, which handles opening and closing resources automatically:
+
+   with open('file.txt') as f:
+       contents = f.read()
+
+7. PYTHONIC ITERATION: Utilizing Python’s iteration constructs and features effectively. For example, using generator expressions for memory-efficient loops:
+
+   total = sum(x**2 for x in range(10))
+
+8. EXPLICIT IS BETTER THAN IMPLICIT: This principle from the Zen of Python suggests that code should be explicit rather than relying on implicit behavior, which can make it clearer and more understandable.
+
+9. AVOIDING PREMATURE OPTIMIZATION: Pythonic code often prioritizes clarity over premature optimization. It’s better to write clear and maintainable code first, and then optimize if necessary.
+
+10. LEVERAGE PYTHON’S DATA STRUCTURES: Using Python's powerful data structures like sets, dictionaries, and tuples to write efficient and readable code.
+   
+   from collections import Counter
+   count = Counter(my_list)
+
+------------------------------------------------------------
+HOW TO WRITE BEAUTIFUL PYTHON CODE WITH PEP 8
+
+PEP stands for Python Enhancement Proposal.
+
+PEP 8 exists to improve the readability of Python code.
+
+1. Naming Conventions
+“Explicit is better than implicit”
+
+Type		Naming Convention						Examples
+Function	Use a lowercase word or words.
+			Separate words by underscores to 
+			improve readability.					python_function
+Variable	Use a lowercase single letter, 
+			word, or words. Separate words with 
+			underscores  to improve readability.	var, person_age
+Class		Start each word with a capital letter. 
+			Don’t separate words with underscores. 
+			This style is called camel case or 
+			Pascal case.							Model, PythonClass
+Method		Use a lowercase word or words.
+			Separate words with underscores to 
+			improve readability.					class_method
+Constant	Use an uppercase single letter, 
+			word, or words. Separate words with 
+			underscores to improve readability.
+													PYTHON_CONSTANT
+Module		Use a short, lowercase word or words.
+			Separate words with underscores to 
+			improve readability.					python_module.py
+Package		Use a short, lowercase word or words.
+			Don’t separate words with underscores.	pythonpackage
+
+----------------------------------------------------------------
+BLANK LINES:
+
+Surround top-level functions and classes with two blank lines.
+Use one blank line after every function definition.
+Use blank lines sparingly inside functions to show clear steps. 
+
+INDENTATION:
+Industry standard is 4 spaces.
+Use spaces rather than tabs.
+However, we can adjust the settings where each tab is replaced with 4 spaces.
+
+> Align the indented block with the opening delimiter.
+> Use a hanging indent.
+
+INLINE COMMENTS:
+Inline comments explain a single statement in a piece of code. They’re useful to remind you, or explain to others, why a certain line of code is necessary. Here’s what PEP 8 has to say about them:
+
+Use inline comments sparingly.
+Write inline comments on the same line as the statement they refer to.
+Separate inline comments from the statement by two or more spaces.
+Start inline comments with a # and a single space, like block comments.
+Don’t use them to explain the obvious.
+
+DOCUMENTATION STRINGS:
+Documentation strings, or docstrings, are strings enclosed in triple double quotation marks (""") or triple single quotation marks (''') that appear on the first line of any function, class, method, or module.
+
+> WHITESPACE AROUND BINARY OPERATORS
+> WHEN NOT TO USE WHITE SPACES
+> Don’t compare Boolean values to True or False using the equivalence operator.
+> Use the fact that empty sequences are falsy in if statements.
+WRONG WAY:
+	a_list = []
+	if not len(a_list):
+		print("List is empty!")
+RIGHT WAY:
+	a_list = []
+	if not a_list:
+		print("List is empty!")
+		
+> Use .startswith() and .endswith() instead of slicing.
+---------------------------------------------------------------
+PYTHON2 vs PYTHON3
+
+Python 3 introduced many improvements and new features, it is not backward-compatible with Python 2.
+
+1. Print Statement vs. Print Function
+
+Python 2: print is a statement.
+
+  print "Hello, world!"
+
+Python 3: print is a function.
+
+  print("Hello, world!")
+
+2. Integer Division
+Python 2: Integer division truncates towards negative infinity.
+  result = 7 / 3  # result is 2
+
+Python 3: Integer division returns a float.
+  result = 7 / 3  # result is 2.3333...
+
+For integer division, use the `//` operator in both versions.
+  result = 7 // 3  # result is 2
+
+3. Unicode Handling
+
+Python 2: Strings are ASCII by default. Unicode strings are denoted by a 'u' prefix.
+  s = u"Hello, world!"
+
+Python 3: Strings are Unicode by default. Byte strings are denoted by a `b` prefix.
+  s = "Hello, world!"
+  b = b"Hello, world!"
+
+4. Iterators and Ranges
+
+Python 2: range() returns a list, and xrange() is used for an iterator.
+  range(3)  # [0, 1, 2]
+
+Python 3: range() returns an iterator, and xrange() is removed.
+  range(3)  # range(0, 3)
+
+5. Exception Syntax
+
+Python 2: Exception syntax uses 'as' keyword.
+  try:
+      # code
+  except Exception, e:
+      # handle exception
+
+Python 3: Exception syntax uses `as` keyword.
+  try:
+      # code
+  except Exception as e:
+      # handle exception
+
+6. Input Function
+
+Python 2: raw_input() is used to read strings from the user, and input() evaluates the input as code.
+  name = raw_input("Enter your name: ")
+
+Python 3: input() always returns a string.
+  name = input("Enter your name: ")
+
+7. Dictionary Methods
+
+Python 2: Dictionary methods like dict.keys(), dict.items(), and dict.values() return lists.
+  d = {1: 'a', 2: 'b'}
+  keys = d.keys()  # [1, 2]
+
+Python 3: These methods return view objects.
+  d = {1: 'a', 2: 'b'}
+  keys = d.keys()  # dict_keys([1, 2])
+
+8. Metaclasses
+
+Python 2: Metaclass syntax is different.
+  class MyClass(object):
+      __metaclass__ = Meta
+
+Python 3: Use metaclass keyword in the class definition.
+  class MyClass(metaclass=Meta):
+      pass
+
+9. Function Annotations
+
+Python 2: Function annotations are not supported.
+
+Python 3: Function annotations allow you to add metadata to function arguments and return values.
+  def greet(name: str) -> str:
+      return f"Hello, {name}"
+
+10. Standard Library Changes
+
+Python 2: Some standard library modules and functions have different names and behaviors.
+
+Python 3: Many modules have been reorganized or renamed. For example, "urlib", "urlib2", and "httplib" have been merged into "urllib" in Python 3.
+
+SUMMARY
+Python 3 introduces several enhancements and improvements over Python 2, aiming to fix design flaws and make the language more consistent and modern. The transition from Python 2 to Python 3 requires code adjustments and testing but ultimately provides a more robust and feature-rich programming environment.
+-------------------------------------------------------------------
+LETS LEARN WITH CODE:
+
+num2 = 235
+print('Num2 = ' + str(num2) + ' is a 3 digit number')
+# In the above code snippet, the str(num2) is to CAST the 'int' data into 'str' data. Note that in Python, there is no Implicit Type Conversion.
+-------------
+Program1: small_of_two_nums.py
+print('Enter the first number:')
+num1 = int(input())
+num2 = int(input('Enter the second number: '))
+
+if num1 < num2:
+    print('Num1 =', num1, ' is smallest')
+else:
+    print('Num2 = ' + str(num2) + ' is smallest')
+--------------
+Now follow these steps to create a new Repo:
+	Login to your github account
+	Click on + (right top corner)
+	Click Create New Repository
+	Give name to your new Repo: "python_sep2024"
+	Make it public Repo (by default it will be public)
+	Click the Checkbox "add readme file"
+	Click Create button
+-----------------------------------------------------------------
+Now follow these steps to create a new Personal Access Token(PAT)
+	Click on your profile Photo (Right Top corner) -> next page
+	Click Settings (Down in the list) -> next page
+	Sroll down and Click Developer Settings -> next page
+	Click PAT -> Click Tokens classic -> next page
+	Click Generate Token -> Select Classic PAT
+	Expiry -> Select No Expiry
+	Scroll Down -> Click Generate Token
+	Add NOTE relevant to the moment or the training that is going on
+	Copy the PAT and mail it to yourself so that it is permanently saved!
+-----------------------------------------------------------
+range(10)
+range(1, 20)
+range(20, 50, 2)
+range(20, 10, -2)
+
+for i in range(30, 10, -2):
+	print(i) # 30 28 26
+	i -= 2
+
+NOTE: the variable 'i' stores the return value of range() and which is a copy. Thus any modification done to 'i' has no effect on the value maintained by range()
+-------------------------------
+import pdb
+
+pdb.set_trace()
+
+input_number = int(input('Enter a number to find 2nd smallest digit in it: '))
+
+smallest_digit = 9
+second_smallest_digit = 9
+temp_number = input_number
+
+while temp_number != 0:
+    remainder_digit = temp_number % 10
+    temp_number = temp_number // 10
+    if remainder_digit < smallest_digit:
+        second_smallest_digit = smallest_digit
+        smallest_digit = remainder_digit
+    elif remainder_digit < second_smallest_digit:
+        second_smallest_digit = remainder_digit
+
+print(f'Second smallest digit in {input_number} is {second_smallest_digit}')
+'''
+i=1
+n=451
+r=1
+n=45
+sd=1
+ssd=9
+
+i=2
+n=45
+r=5
+n=4
+sd=1
+ssd=5
+
+i=3
+n=4
+r=4
+n=0
+sd=1
+ssd=4
+
+i=4
+Loop breaks
+'''
+-------------------------------
+Learn to Debug the CODE using pdb
+
+Command to run the program in debug mode:
+
+python -m pdb program.py
+-----------------
+Code that can invoke the pdb (execute in debug mode)
+
+import pdb
+pdb.set_trace()
+
+-------------------------
+String class:
+place = 'vijayapura'
+
+print(max(place))
+print(min(place))
+print(len(place))
+print(type(place))
+print(dir())
+print(__file__)
+print(__package__)
+print(__doc__)
+------------------------------
