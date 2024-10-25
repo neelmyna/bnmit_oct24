@@ -28,7 +28,18 @@ https://github.com/neelmyna/bnmit_oct24
 	git clone <git_repo_url>
 9. To Sync our Repo and the repo folder in our machine(laptop) the command is:
 	git clone https://PAT@github.com/<username>/<repo_name>
-	
+10.
+HOW TO USE GITHUB:
+To update changes in the local repo
+$> git add .
+$> git commit -m "day1 learning programs and notes"
+(+ "message in the box" click commit)
+
+Sync local repo to the remote repo
+$> git pull origin main
+$> git push origin main
+(sync button and click ok when it prompts)
+
 Why in Pyhton there is no implicit cast?
 -----------------------------------------
 # Program to check if a number if Even
@@ -534,8 +545,82 @@ print('Enter space seperated numbers in a line')
 
 numbers = [int(number) for number in input().split()]
 print('The array is: ', numbers)
-
-
 ----------------------------------------------------
+Download MySQL:
+Create a folder named "mysql" in C:\software
+G search: Download MySQL
+open: https://www.mysql.com/downloads/
+Scroll down and click: MySQL Community (GPL) Downloads 
+Click: MySQL Installer for Windows
+Observe the version 8.0.xx
+Download the msi file of size 3xx MB
+Now, cut and paste the installer file from downloads folder to C:\software\mysql
 
+Installation of MySQL:
+Double Click the installer file
+	Choosing the setup File: (check box) Full -> Click Next
+	Installation: Click Execute -> Click Next
+	Product Configuration: Click Next
+	Type and Networking: Do not change the settings (remember the port number 3306) Click Next
+	Authentication Method: (No changes) Click Next
+	Accounts and Rolls: Add the Root Password as "root123" -> Click Next
+	Windows service: Click Next
+	Server File Permissions: Click Next
+	Apply Configurations: Click Execute -> Click Finish
+	Product Configuration: Click Next
+	MySQL Router Config: Click Finish
+	Product Configuration: Click Next
+	Connect to Server: Enter password and Click Check (Connection succeeded must appear)
+	Apply Configurations: Click Execute -> Click Finish
+	Product Configuration: Click Next
+	Installation Complete: Click Finish
 ----------------------------------------------------
+C:\Program Files\MySQL\MySQL Server 8.0\bin
+
+Paste this path in Environment variables, so that the CLI "mysql" is recognised globally.
+
+Windows search: env
+Click on Edit system environment variables
+Click environment variables
+On the top double click path
+Click new
+Ctrl+V (paste) the path
+Click Ok Ok OK
+--------------------------------------------------------------
+show databases;
+// To display the available databases
+
+use nithin_db;
+// To select (go inside) the database
+
+select database();
+// To print the current DB
+
+create database my_new_db;
+// To create a new DB
+
+drop database nithin_db;
+// To delete the database (All the content of the DB will be deleted)
+
+Lets take an entity: employee
+
+The table name must be employees
+Whle creating a table, we must povide 3 details of the attributes of the entity
+	1. name
+	2. data type
+	3. constraint
+Attributes: id, name, designation, location, phone_number, salary, commision, years_of_experience
+
+create table IF NOT EXISTS employees(
+id						int				primary key  auto_increment
+name					varchar(30)		not null
+designation				varchar(30)		not null
+location				varchar(30)		
+phone_number			bigint			unique
+salary					float			default (0)
+commision				int				
+years_of_experience		tinyint			);
+
+
+
+

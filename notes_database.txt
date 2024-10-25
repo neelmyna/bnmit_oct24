@@ -1,0 +1,137 @@
+DATABASE NOTES:
+
+connection URL:
+http://localhost:3306
+
+Here 3306 is Port Number
+localhost means we are connecting to locally available (on the same machine/system) instance of mysql.
+
+root is the username of our mysql instance
+
+MYSQL COMMANDS:
+
+mysql> show databases;
+// Lists the available/created databases
+
+mysql> select database();
+// Lists the current database under use
+O/P: NULL  (No DB is selected, i.e., we are not inside any DB)
+
+mysql> use sys;
+// To switch a specific DB
+
+mysql> create database nithin_db;
+// Creates a new database with name "nithin_db"
+
+mysql> show tables;
+// Lists the available tables in the DB we are in.
+
+Constraints in RDBMS:
+unique
+not null
+check
+default
+auto_increment
+primary key
+references
+
+Person
+persons
+	id, name, gender, location, age
+	
+What Entity
+Entity fields
+DT of the fields
+constraints of the fields
+
+field_name	DT			Constraint
+id			int			unique and not null 
+name		varchar(50)	not null
+gender		varchar(2)	
+location	varchar(50)
+age			int			default
+
+create table IF NOT EXISTS persons(id int primary key auto_increment, name varchar(50) not null, gender varchar(2), location varchar(50), age int check(age > 0));
+
+-------------------------------------------------
+select * from persons;
+// To view all fields of the rows in the table
+
+select name, location from persons;
+OR
+select name as "person name", location as city from persons;
+// To list only specific fields of the rows in the table
+
+select location from persons;
+// To list only the location of all rows in the table
+
+select distinct location from persons;
+// To list only the unique locations from the table
+
+select * from persons where age < 18;
+// List the persons who are of the age below 18
+
+select * from persons where location = 'hubballi';
+// List the persons from the city hubballi
+
+select * from persons where age between 20 and 50;
+// List the persons aged between 20 and 50
+
+select * from persons where name like 'a%';
+// List all the persons whose name starts with 'a'
+
+select * from persons where name like 'a%a';
+// List all the persons whose name starts with 'a' and ends with 'a'
+
+select * from persons where name like 'a__a';
+-- List all the persons whose name starts with 'a' and ends with 'a' and has totally 4 characters in it
+
+select * from persons where location in('hubballi', 'dharwad', 'belagavi');
+OR
+select * from persons where location = 'hubballi' or location = 'dharwad' or location = 'belagavi';
+-- List persons who are from hubballi, dharwad and belagavi
+
+select * from persons where location = null; // incorect
+select * from persons where location = 'null';// incorrect
+select * from persons where location is null;//correct
+-- List the rows where location is not added
+
+select avg(age) as average_age from persons;
+-- Print average age of all persons
+
+
+create table employees(id int primary key auto_increment, name varchar(50) not null, designation varchar(40) not null, technology varchar(30) not null, phone_num bigint unique, commission int, salary float default 0, years_of_exp int);
+
+
+byte	tinyint
+short	smallint
+int		int
+long	bigint
+
+1 1 1 0 0 1
+32 + 16 + 8 + 1 = 57
+
+Queries:
+1. Update salary and technology of the employee with specific id.
+2. Alter table (meta data) persons add constraint not null to location.
+3. Alter table employees change the data type of commission from int to float
+4. delete the employees who have the designation 'designer'
+5. delete the employee with a specific id
+6. search for a person with specific id
+7. search for employees of specific designation
+---------
+group by
+1. Print the average salaries of employees of different designations
+2. Print the sum of salaries of employees of different technology.
+3. Print all the columns of all rows, but print commission+salary as Total_salary
+
+ifnull(commission, 0) + salary as total_salary
+
+
+
+
+
+
+
+
+
