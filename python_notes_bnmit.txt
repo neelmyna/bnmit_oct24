@@ -622,5 +622,327 @@ commision				int
 years_of_experience		tinyint			);
 
 
+delete * from employees;
+truncate table employees;
+drop table employees;
+-----------------------------------------------------------------------
+DAY6 SATURDAY 26-10-2024
 
+ALGORITHMS:
 
+Linear Search
+Binary Search
+Bubble Sort
+Insertion Sort
+Quick Sort
+Merge Sort
+
+How the Algorithm works
+Pseudocode of the logic
+Implementation (Code)
+Efficiency
+Optimization
+Application of the algorithm
+Category
+
+LINEAR SEARCH
+
+In a list or array of elements, we search for an element sequentialy from either of the ends and move towards another end.
+
+Possibilities:
+1. We notice that the element may be found at the very 1st position or it may be found some where near the 1st element.
+2. We may find the element some where at the middle of the list.
+3. We may find the element some where at the rear end of the list.
+4. However, we may also have the situation where the element is not found.
+
+The above scenario is the case where we are searching for the 1st occurance of the element.
+
+Alternatively, we may have to find the 2nd occurance of the element.
+We may have to find the frequency of the element.
+
+In the 1st possibility, the number of searches is 1 or nearer to 1.
+In the 2nd possibility, the number of searches is N/2 or nearer to N/2, where N is the size of the list.
+In the 3rd possibility, the number of searches is N or nearer to N, where N is the size of the list.
+In the 4th possibility, the number of searches is exactly N.
+
+BIG-OH NOTATION:
+1. It is used to find worst case efficiency of an algorithm.
+However, we cn also find the best case and average case efficiencies as well.
+2. Big-Oh finds the efficiency in terms of N, where N is the size of the data structure (list, tree etc)
+3. Big-Oh considers the size N to be very big.
+Because we have to find efficiency of bigger size than the smaller sized data structures. This is because, for smaller sized data structures, the computers are equipped to find the solution faster/quicker. However how the computer or the algorithm behaves for very large data structures is the study of interest.
+4. Big-Oh gives us only the order in which the efficiency is. It doesn't give the exact efficiency. For example, Log(N), Root(N), N!, N, N*Log(N), N-square etc.
+This is because its duty is to tell us the order in which the efficiency. To find exact efficiency means, we are finding the efficiency for an instance/example/specific problem.
+5. The efficiency of any algorithm depends on the total number of iterations of the loops or recursive calls.
+
+PSEUDOCODE OF LINEAR SEARCH:
+
+Procedure: linear_search:
+Receives the list/array and search_element
+	N = sizeof(list)
+	for POSITION from 1 to N do:
+		if element at POSITION in list is equal to search_element:
+			then return POSITION
+	return -1 ###Comment: indicating search_element was not found
+	
+Python Program:
+import sys
+
+def linear_search(my_list, key):
+    for i in range(len(my_list)):
+        if my_list[i] == key:
+            return i
+    return -1
+
+numbers = list()
+print(type(sys.argv))
+
+for i in range(1, len(sys.argv)):
+    numbers.append(float(sys.argv[i]))
+
+print(f'User given numbers are: ', numbers)
+key = float(input('Enter number to be searched: '))
+
+position = linear_search(tuple(numbers), key)
+if position == -1:
+    print(f'The element {key} was not found')
+else:
+    print(f'The element {key} was found at position {position+1}')
+-----------------
+Worst case scenario: When the element is not found, then number of searches is N (that is the number of elements in the list)
+The number of searches is N even when the element is found at last position or some where near last position.
+In these 2 cases, the efficiency is O(N)
+Thus, WCE of Linear search is O(N)
+
+The best case scenario is when the number of searches is 1 or nearer to 1.
+Thus, BCE  is O(1)
+The ACE looks to be O(N/2), but it is not. Because, we know that the Big-Oh job is not to give the exact efficiency or in other words, its job is to tell only the order in which the efficiency is.
+Hence, ACE of linear search is O(N)
+
+WCE: O(N)
+ACE: O(N)
+BCE: O(N)
+
+How to optimize Linear Search:
+1. Pridictions: See if we can predict accurately that the search element is in some part of the list, like the 1st half or 2nd half etc.
+2. Use MultiThreading. Cut the list into M number of sub lists and fee each of them to the M threads where every thread is implementing linear search. This method brings down the search time by M times.
+
+APPLICATIONS:
+We must use Linear search when the input list is not sorted. We must use linear search even when the list is almost sorted!
+
+CATEGORY:
+It falls under Brute Force technique. Brute Force technique is the natural/traditional way of solving a problem. It doesn't follow/implement any specific formula nor it uses partially another algorithm.
+--------------------------------------------------------------------
+BINARY SEARCH:
+
+Mandatory Pre-Requisite: It expects the list to be sorted. The list elements must be ordered so that random access of elements can be done (can be implemented on arrays only. not on linked lists)
+
+Algorithm:
+For a list of size N, We reach the mid element and check if it is the key. If yes, then stop the search and return the mid position where the key is found.
+Else, we check if the key is smaller than the mid element, then we are affirmed that the key cannot be found in the 2nd half (right half) of the list.
+Thus, we adjust the search area to 1st half.
+If the key is bigger than the mid element, then the search area is reset to 2nd half.
+This is continued until we are left with a single element list!
+We keep moving to the left when the key is smaller and we keep moving to the right when the key is nearer or equal to the rear element.
+When the key is not found even in the single element list, then the search fails.
+
+PSEUDOCODE:
+procedure: binary_search(my_list, key):
+	low  = 1 (The 1st position of list)
+	high = N (The last position of list)
+	do: ###Comment: We must use do-while loop if available (not while loop)
+		mid = (low + high) / 2  ###Comment: Integer division
+		if list[mid] is key then:
+			return mid
+		else if key < list[mid] then:
+			set high = mid-1 ###Comment: reset search list to 1st half
+		else:
+			set low = mid+1 ###Comment: reset search list to 2nd half
+	return -1 ###Comment: When the key is not found
+	
+Implementation:
+import sys
+
+def binary_search(my_list, key):
+    low = 0
+    high = len(my_list)-1
+    while low <= high: # until list has at least one element
+        mid = (low + high) // 2
+        if key == my_list[mid]:
+            return mid
+        elif key < my_list[mid]:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return -1
+
+numbers = list()
+print(type(sys.argv))
+
+for i in range(1, len(sys.argv)):
+    numbers.append(float(sys.argv[i]))
+
+key = float(input('Enter number to be searched: '))
+numbers.sort() #mutable call
+print(f'User given numbers are: ', numbers)
+
+position = binary_search(tuple(numbers), key)
+if position == -1:
+    print(f'The element {key} was not found')
+else:
+    print(f'The element {key} was found at position {position+1}')
+----------------------------------------
+EFFICIENCY OF BINARY SEARCH:
+
+We implement Binary search using do-while loop. Thus, it is not possible to know the number of iterations directly. Because, the loop condition is not on N. Where as, in for loop, the loop condition always involves N (size of the list)
+Hence we have to find efficiency of Binary search indirectly.
+
+Let us assume number of iterations of do-while loop is X.
+We know,
+the number of elements in 1st iteration is N
+the number of elements in 2nd iteration is N/2
+the number of elements in 2nd iteration is N/4
+
+Observe that, when there is only one element in the list, the low is equal to high and the value would be 0 (if it is 1st element of given list) or N-1 if it is the last element.
+
+N      N/2      N/4      N/8   ......       4        2       1
+2pow(X-1)                                 2pow2    2pow1   2pow0
+
+N = 2pow(X-1)
+According to Big-Oh characteristic, we can ignore the constants.
+Thus,
+N = 2powX
+Hence X = Log(N)
+And thus WCE of Binary Search is O(Log(N))
+ACE: O(logN)
+BCE: O(1)
+
+Optimization: The same steps we used to optimize linear search.
+
+Apllication: Where ever searching is necessary, we must use binary search if the list is sorted.
+Note that Log(N) efficiency is the fastest.
+
+If we have to search 1 lakh elements, say the elements are 1, 2, 3, ... 100000
+And the key is 99999
+Then the number of searches with linear search algorithm is 99,999
+And number of searches with Binary search would be around 20!!!!!!
+-----------------------------------------------------------------------
+QUICK SORT:
+
+PARTITION step: O(N) algorithm
+i = 0   ## 'i' runs for the length of the list
+We take either the 1st or last element (in fact any) as reference element named 'pivot'
+j = 0  ## 'j' tracks the final position of pivot element.
+Once we have accessed all elements of the list, and the pivot element is placed in its final position, the list is PARTITIONED into 2. Where the left part will have all the elements smaller than the pivot and all elements to the right which are greater than or equal to the pivot element.
+----------------------
+import sys
+
+def partition(my_list):
+    j = 0
+    pivot = my_list[-1] #last element is the reference element
+    for i in range(len(my_list)-1):
+        if my_list[i] < pivot:
+            my_list[i], my_list[j] = my_list[j], my_list[i]
+            j += 1
+    my_list[j], my_list[-1] = my_list[-1], my_list[j]
+
+numbers = list()
+print(type(sys.argv))
+
+for i in range(1, len(sys.argv)):
+    numbers.append(float(sys.argv[i]))
+
+print(f'User given numbers are: ', numbers)
+partition(numbers)
+print(f'After Partition, list is: ', numbers)
+------------------------------------------------------
+import sys
+
+def partition(my_list, low, high):
+    j = low
+    pivot = my_list[high] #last element is the reference element
+    for i in range(low, high):
+        if my_list[i] < pivot:
+            my_list[i], my_list[j] = my_list[j], my_list[i]
+            j += 1
+    my_list[j], my_list[high] = my_list[high], my_list[j]
+    return j
+
+def quick_sort(my_list, low, high):
+    if low < high:
+        pivot_index = partition(my_list, low, high)
+        quick_sort(my_list, low, pivot_index-1)
+        quick_sort(my_list, pivot_index+1, high)
+
+numbers = list()
+print(type(sys.argv))
+
+for i in range(1, len(sys.argv)):
+    numbers.append(float(sys.argv[i]))
+
+print(f'User given numbers are: ', numbers)
+quick_sort(numbers, 0, len(numbers)-1)
+print(f'Sorted list is: ', numbers)
+-------------------------------------------
+Efficiency of Quick Sort:
+The quick_sort() recursive call has efficiency of O(LogN)
+The Partion step has efficiency of O(N)
+Thus the Quick Sort efficiency is O(N LogN)
+BCE: O(N Log N)
+ACE: O(N Square)
+WCE: O(N Square)
+
+NOTE:
+1. In all sorting techniques/algorithms, the best case scenario is when the list is already sorted or almost sorted and we are sorting in the same order.
+
+2. In  all sorting algorithms, the worst case scenario is when the list is sorted or almost sorted and we are sorting in the opposite order.
+
+w.r.t. Quick sort, in the best case scenario, the pivot would exactly partition the list into 2 HALVES in every recursive call.
+Thus the number of partitions would be LogN
+
+However, in the worst case scenario, the pivot would partition the list with only one element or very few elements on one side and on the other, all remaining elements.
+This requires N partitions to be done. Hence the total efficiency of Quick sort in the worst case would be O(N square)
+
+OPTIMIZATION:
+One way to optimize the Quick sort is to study which of the element in the list to be choosen as pivot, so that the list partitioning creates balanced part lists.
+
+Application:
+When the list to be sorted is having random elements (where the sorted prediction is impossible) then it is good to apply Quick Sort.
+We must not apply quick wort when we know the input list is sorted and we have to sort in reverse order.
+
+CATEGORY: Quick sort belongs to Divide and Conquer technique.
+Remember, in all divide and conquer techniques, we apply the same logic to the divided (part) data structure.
+----------------------------------------------------------
+INSERTION SORT:
+
+It is said to be an Optimistic Sorting technique.
+
+Even before starting the sorting, we perceive Sorted array in the I/P array!
+
+Thus we see 2 arrays in the given array. One, the sorted array and the other, unsorted array.
+
+The very 1st element of the given list is itself considered to be a list and we all know that a single element list is always sorted. And the remaining elements are to be sorted (unsorted array).
+
+Thus, we have to keep inserting/adding one element at a time from the unsorted list to the sorted list.
+However, this is not that easy as it sounds!
+We must INSERT the new element into the sorted list in its right position.
+
+PSEUDOCODE:
+
+'i' is considered to point to the indices of the array which starts from zero
+
+for i from 1 to N-1 do:
+	element = array[i] ### element to be inserted from unsorted to sorted A
+	j = i-1 ### index of last element in the sorted array
+	while j >= 0 and element < array[j] do:
+		array[j+1] = array[j] ### Shift the element to right in sorted Array
+		j--
+	array[j+1] = element
+	
+Note:
+1. the outer loop of the Insertion sort (And also of bubble sort and selection sort) runs for the length of unsorted array
+2. The inner loop of Insertion sort shifts the elements in the sorted array to the right making place for the new element to be inserted.
+3. When the new element to be inserted in the sorted list happens to be the biggest element in the sorted list, then there are no shifts!
+4. When the new element to be inserted in the sorted list happens to be the smallest element in the sorted list, then there maximum possible number of shifts.
+5. In the case where the list is already sorted (almost sorted), then the number of shifts for every new element will be either zero or nearer to zero. In such case, we observe that the Insertion sort is working as if we are copying elements of a list into another. And thus, the BCE of Insertion sort would be O(N) (linear)
+6. 
