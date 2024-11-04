@@ -630,12 +630,17 @@ DAY6 SATURDAY 26-10-2024
 
 ALGORITHMS:
 
-Linear Search
-Binary Search
-Bubble Sort
-Insertion Sort
-Quick Sort
-Merge Sort
+Category: Brute force, Divide and Conquer, Decrease and Conquer
+Some algorithms among these may also be catagorised as comparision based.
+
+Linear Search  (Brute force and comparision based)
+Binary Search  (Divide and Conquer)
+Bubble Sort    (Brute force and comparision based)
+Insertion Sort (Decrease and Conquer and comparision based)
+Quick Sort     (Divide and Conquer and comparision based)
+*Merge Sort     (Divide and Conquer and comparision based)
+*BST            (Divide and Conquer)
+*AVL Tree       (Divide and Conquer and comparision based)
 
 How the Algorithm works
 Pseudocode of the logic
@@ -945,4 +950,15 @@ Note:
 3. When the new element to be inserted in the sorted list happens to be the biggest element in the sorted list, then there are no shifts!
 4. When the new element to be inserted in the sorted list happens to be the smallest element in the sorted list, then there maximum possible number of shifts.
 5. In the case where the list is already sorted (almost sorted), then the number of shifts for every new element will be either zero or nearer to zero. In such case, we observe that the Insertion sort is working as if we are copying elements of a list into another. And thus, the BCE of Insertion sort would be O(N) (linear)
-6. 
+----------------------------------------------------------------
+DAY7 MONDAY 04-11-2024
+
+When ever we install python, we get 2 CLIs (commands, nothing but the Apps)
+python: It is used to run/debug python scripts
+pip:    It is used to install/uninstall packages
+
+$ pip list
+The above command lists all the packages installed
+
+
+
