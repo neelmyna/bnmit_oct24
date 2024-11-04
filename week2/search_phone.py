@@ -33,3 +33,4 @@ def search_row():
         print('database disconnection failed')
 
 search_row()
+# the search_row function will run
