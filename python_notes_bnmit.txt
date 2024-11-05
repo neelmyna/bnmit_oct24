@@ -960,5 +960,89 @@ pip:    It is used to install/uninstall packages
 $ pip list
 The above command lists all the packages installed
 
+$ pip install pymysql
+The above command installs the package pymysql
+pymysql is used to do database programming such as connectivity and run the various commands such as CRUD and lot more.
+------------------------------------------------------------
+#   DATE	DAY3  DURATION START-TIME
+1	21-10	Mon		2.5		3:30
+2	22-10	Tue		2.5		3:30
+3	23-10	Wed		4		1:30
+4	24-10	Thu		2.5		3:30
+5	25-10	Fri		2.5		3:30
+6	26-10	Sat		2.5		3:30
+7	04-11	Mon		2.5		3:30
+8	05-11	Tue		2		4:00
+9	06-11	Wed		2.5		3:30
+10	07-11	Thu		2.5		3:30
+11	08-11	Fri		2.5		3:30	1st Assessment
+12  10-11   Sun     3       9 am to 12 pm (Online)
+13	11-11	Mon		2.5		3:30
+14	12-11	Tue		2.5		3:30
+15	13-11	Wed		2.5		3:30
+16	14-11	Thu		2.5		3:30
+17	15-11	Fri		2.5		3:30	2nd Assessment
+18	16-11	Sat		4		9 am to 1 pm (Online)
+--------------------------------------------------------
+Merge Sort
+IP Array:  23  45  87  12  9  35  55  25  7
 
+Divide Steps:
+23  45  87  12        9  35  55  25  7
+23  45        87  12        9  35        55  25  7
+23      45       87       12       9      35      55     25  7
+23      45       87       12       9      35      55     25       7
 
+Conquer Steps:
+23  45        87       12       9      35      55     25       7
+			  
+23  45      12  87        12       9      35      55     25       7
+				         			  
+23  45     12  87      9  12       35      55     25       7
+						           35  55
+23  45     12  87      9  35       55       25        7
+								   25  55        7
+23  45     12  87      9  35      25  55        7
+i=2        j=2
+
+12  23  45  87       9  35      25  55        7
+                     i=0        j=0
+					 
+					 9  25  35  55        7
+					 k=0
+12  23  45  87       9  25  35  55        7
+i=3                  j=4
+
+9  12  23  25  35  45  55  87        7
+k=7
+
+9  12  23  25  35  45  55  87        7
+i=0                                  j=1
+
+7  9  12  23  25  35  45  55  87
+k=0
+
+Algorithm:
+
+def mergeSort(array, low, high):
+	if low < high:
+		array1 = mergeSort(array, low, high//2);
+		array2 = mergeSort(array, high//2+1, high);
+		mergedArray = merge(array1, array2)
+	return mergedArray
+
+def merge(array1, array2):
+	i = 0
+	j = 0
+	mergedArray = []
+	while i <= len(array1) or j <= len(array2):
+		if array1[i] < array2[j]:
+			mergedArray.append(array1[i])
+			i += 1
+		else
+			mergedArray.append(array2[j])
+			j += 1
+	
+	mergedArray.extend(array1[i:])
+	mergedArray.extend(array1[j:])
+			
