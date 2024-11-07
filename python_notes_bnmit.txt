@@ -1045,4 +1045,244 @@ def merge(array1, array2):
 	
 	mergedArray.extend(array1[i:])
 	mergedArray.extend(array1[j:])
-			
+------------------------------------------------------------
+TREES:
+1. Tree is an acyclic data structure (Hierarchical DS)
+2. There is one entry point to the Tree called as ROOT
+3. The data in tree is stored in NODES.
+4. Every node may be connected to other nodes called as CHILD NODES.
+5. The node with no child node is said to be LEAF node.
+6. The tree in which every node has at most 2 child nodes is said to be BINARY TRRE.
+7. The root node of the tree is said to be at a LEVEL 1.
+8. Moving from a node to its immediated child node is called as TRAVERSING to a node. It is also called as DESCENDING THE TREE.
+9. The traversal from a node to another node in the tree forms a PATH
+10. starting from root to any leafd node in the tree is said to be a COMPLETE PATH.
+11. The longest path or the highest possible level of a node in a path is said to be the HEIGHT/DEPTH of the tree.
+12. In a binary tree, the child to the left is said to be LEFT CHILD NODE and thus we jave RIGHT CHILD NODE.
+13. In a binary tree, as we traverse, a node we reach can itself be treated as ROOT. And, it along with its descendents becomes a tree by itself. Thus the operations on a tree is just that the operations apply on a node and its immediate child nodes and this is further/later recursive in nature.
+14. The node to which has its childe nodes, can be termed as PARENT NODE.
+15. In a binary tree of height N, has at most 2powN-1 nodes.
+16. A tree having exactly 2powN-1 nodes is said to be COMPLETE BINARY TREE and it is also said to be FULL BALANCED BINARY TREE.
+17. A binaty tree having, only left child nodes or only right child nodes is exactly and actually a linear data structure.
+18. A binary tree with all nodes having only 0 or 2 child nodes is said to be STRICTLY BINARY TREE.
+19. The left child node along with its descendents of a node is said to be LEFT SUB TREE and similarly we may have the RIGHT SUB TREE.
+20. If in a binary tree the data of all nodes are ARRANGED in such a way that, the data of the left child node is smaller/lesser than the paremt node data and the right child node data is greater than or equal to, then it is said to be BINARY SEARCH TREE (BST)
+21. In a BST, we if access the left child data 1st, and then the current node data and lastly the right child and this is recursively applied to entire tree then it is said to be INORDER TRAVERSAL. Left-Root-Right is InOrder
+21. Left-Right-Root is Post order
+22. Root-Left-Right is Pre order
+23. We obderve that in pre order traversal, the root is always accessed 1st. In post order, the root is always traversed last. We also observe that when the left subtree and right sub tree are balanced then the root appears almost at the mid in in-order traversal.
+24. Adding node into a BST is always added as a leaf node.
+25. Searching or adding or deleting a node in a BBST has an efficiency of O(LogN) (worst case efficiency)
+26. Keeping the BST balanced is very important so that we enjoy an efficiency of O(LogN). If the tree gets imbalanced, then the efficiency diteriorates to linear effiency O(N).
+27. There is always a unique (only one) path to reach any node in a tree (hierarchical DS)
+28. DELETION OF A NODE FROM BST:
+	1. When node to be deleted is leaf node. Make the respective link of the parent node null.
+	2. When node to be deleted has one child node. The only child node of the node being deleted is placed in its parent's position.
+	3. When node to be deleted has 2 child nodes. The right child of the node being deleted, becomes the right child of its parent. The left child along with its descendents (that is the left sub tree) is made the child of left most left child node of the right child.
+29. The height of a node in a tree is the distance from itself to farthest leaf node that can reached from it.
+
+Algorithms on a BST:
+1. create a BST (by adding a node)
+2. Search/Update a node (use any of the 3 traversals)
+3. Delete a node from BST
+
+Problems on BST:
+1. Input the traversals inorder and pre order OR inorder and post order and build the BST.
+2. Merge 2 BSTs
+3. Balance a imbalanced BST.
+
+
+--------------------------------------------------------
+class MyClass:
+    class_var = 1
+    
+    @classmethod
+    def class_method(cls):
+        MyClass.class_var += 1
+        return cls.class_var
+    
+    @staticmethod
+    def static_method():
+        MyClass.class_var += 1
+        return f"This is a static method {MyClass.class_var}"
+		
+    @staticmethod
+    def another_static_method():
+        MyClass.class_var += 1
+        return f"This is a static method {MyClass.class_var}"
+        
+
+print(MyClass.class_method())  # Output: 2
+print(MyClass.static_method())
+print(MyClass.another_static_method())
+print(MyClass.class_method())  # Output: 5
+----------------------------------------------------
+import os
+files = os.listdir('.')
+Returns a list of the names of the entries in the directory given by path.
+
+os.mkdir('new_directory')
+Creates a new directory at the specified path.
+
+os.makedirs('parent/child/grandchild')
+Recursively creates directories, creating all intermediate-level directories needed to contain the leaf directory.
+
+os.rename('old_name.txt', 'new_name.txt')
+Renames the file or directory from src to dst.
+---------------------------------------------------
+IMPLEMENTATION OF INHERITANCE
+
+class Student:
+    pass
+
+class Employee:
+    pass
+
+class Manager(Employee):
+    pass
+
+class Director(Manager):
+    pass
+
+Employee employee = new Director()
+Manager manager = new Director()
+
+student = Student()
+employee = Employee()
+manager = Manager()
+
+print(isinstance(manager, Manager))
+print(isinstance(manager, Employee))
+print(isinstance(employee, Manager))
+
+Manager manager = new Manager(); // fine
+
+Manager manager = new Employee() // not fine
+
+Employee employee = new Employee() // fine. Reference can access 100% of properties of the object, because both are of same type
+
+Employee employee = new Manager() // Fine but with restrictions. Only the derived propertied of Employee can be accssed from the object and the newly added properties of Manager cannot be accssed by employee
+
+The reference of type X can point to object of type X
+The Reference of super type can point to object of sub type however it cannot access newly added properties of the sub type
+The reference of sub type cannot point to object of super type, because not all properties that can be accssed by the reference are available in the object.
+-------------------------------------------------------------------
+class Student:
+    pass
+
+class Employee:
+    pass
+
+class Manager(Employee):
+    pass
+
+class Director(Manager):
+    pass
+
+print(issubclass(Director, Employee)) # True
+print(issubclass(Manager, Employee))  # True
+print(issubclass(Manager, Director))  # False
+print(issubclass(Director, Manager))  # True
+print(issubclass(Director, Director)) # True
+
+Note: A class is technically sub class of itself
+---------------------------------------------------
+#class Student(object):
+class Student:
+    student_count = 0
+    student_id = 101
+
+    def __init__(self, name = 'mahesh'):
+        self.__id = Student.student_id
+        self.__name = name
+        Student.student_count += 1
+        Student.student_id += 1
+
+    def get_name(self):
+        return self.__name
+    
+    def get_id(self):
+        return self.__id
+
+    @classmethod
+    def get_student_count(cls):
+        return Student.student_count
+        # return cls.number_of_students
+
+    def __str__(self):
+        return f'Id={self.__id}, Name={self.__name}'
+
+s1 = Student()
+s2 = Student('Girish')
+s3 = Student('Satish')
+
+#print(dir(Student))
+print(s1) # calls the implicit method __str__()
+#print('Student1 name is', s1.name) # error
+print('Student1 name is', s1.get_name()) #
+print('Student1 id is', s1.get_id()) #
+#print(s1.id)   #error
+#print(s1.__id) #error
+#print(dir(s1))
+print(getattr(s1, 'branch', 'CSE')) # To temporarily add a new attribute to the object
+print(s1) # calls the overridden __str__() method
+--------------------------------------------------------
+#class Student(object):
+class Student:
+    student_count = 0 # a class variable is created
+    student_id = 101
+
+    def __init__(self, name = 'mahesh'):
+        self.__id = Student.student_id
+        self.__name = name
+        Student.student_count += 1
+        Student.student_id += 1
+
+    def get_name(self):
+        return self.__name
+    
+    def get_id(self):
+        return self.__id
+
+    @classmethod
+    def get_student_count(cls):
+        return Student.student_count
+        # return cls.number_of_students
+
+    def __str__(self):
+        return f'Id={self.__id}, Name={self.__name}'
+
+s1 = Student()
+print('Student Count now is', Student.get_student_count())
+s2 = Student('Girish')
+s3 = Student('Satish')
+print('Student Count now is', Student.student_count)
+print(f'Student1 details are: {s1}')
+print(f'Student2 details are: {s2}')
+print(f'Student3 id is', s3.get_id())
+---------------------------------------------------
+class Employee:
+	id = 101
+
+	def __init__(self, name, designation, salary):
+		self.id = Employee.id
+		self.name = name
+		self.designation = designation
+		self.salary = salary
+		Employee.id += 1
+	def __str__(self):
+	    return f'{self. id}, {self.name}, {self.designation}, {self.salary}'
+
+class Manager(Employee):
+	def __init__(self, commission):
+		self.commission = commission
+	def __str__(self):
+		return f'{self.id}, {self.name}, {self.designation}, {self.salary}, {self.commission}'
+
+emp1 = Employee('asha', 'developer', 125000)
+m1 = Manager(2500)
+emp2 = Employee('usha', 'developer', 225000)
+print(emp1)
+#print(m1)
+
+emp2 = m1 # object slicing
