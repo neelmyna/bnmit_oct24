@@ -174,14 +174,15 @@ class Menu:
             3 : self.gameOperations.updateGame,
             4 : self.gameOperations.deleteGame,
             5 : self.gameOperations.listGames,
-            6 : self.exitProgram
+            6 : self.gameOperations.createTable,
+            7 : self.exitProgram
         }
         return menu
 
     def runMenu(self):
         menu = self.getMenu()
         while True:
-            print('\n 1:Create 2:Search 3:Update 4:Delete 5:ListAll 6:Exit \n Your choice: ')
+            print('\n 1:Create 2:Search 3:Update 4:Delete 5:ListAll 6:CreateTable 7:Exit \n Your choice: ')
             choice = int(input())
             menu.get(choice, self.invalidInput)()
 
