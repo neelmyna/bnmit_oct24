@@ -1537,5 +1537,7 @@ else:
 ---------------------------------------------
 To enforce elements of same type to encapsulated, we must use array from the module array
 array.array stores elements of same type only.
+-----------------------------------------------------
 
-
+{"airline" : "akasa", "source" : "chennai", "destination" : "jaipur", 
+"duration" : 3.25, "fare" : 9200, "id" : 1}
