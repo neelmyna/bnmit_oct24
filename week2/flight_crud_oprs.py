@@ -86,14 +86,15 @@ def delete_flight(id):
     cursor.close()
     conn.close()
 
-def update_flight(id):
+def update_flight(flight, id):
     query = 'update flights set duration = ?, fare = ? where id = ?'
     #id = int(input('Enter id of the flight to be updated: '))
     #duration = float(input('Enter new duration of the flight: '))
     #fare = float(input('Enter new fare of the flight: '))
     conn = connect_db()
     cursor = conn.cursor()
-    cursor.execute(query, (duration, fare, id))
+    params = (flight.duration, flight.fare, id)
+    cursor.execute(query, params)
     conn.commit()
     cursor.close()
     conn.close()

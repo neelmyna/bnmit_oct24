@@ -18,6 +18,10 @@ def flights_create():
 @app.route('/flights/<id>',methods=['GET'])
 def flights_read_by_id(id):
     flight = search_flight(id)
+    print(flight)
+    print(type(flight))
+    if flight == None:
+        return jsonify("flight not found")
     flight_dict = {'id':flight.id, 'title':flight.airline, 'source':flight.source, 'destination':flight.destination, 'duration': flight.duration, 'fare': flight.fare}
     return jsonify(flight_dict)
 
@@ -40,7 +44,8 @@ def flights_update(id):
     old_flight.destination = body['destination']
     old_flight.duration = body['duration']
     old_flight.fare = body['fare']
-    update_flight(old_flight)
+    id = body['id']
+    update_flight(old_flight, id)
     flight = search_flight(id)
     flight_dict = {'id':flight.id, 'title':flight.airline, 'source':flight.source, 'destination':flight.destination, 'duration': flight.duration, 'fare': flight.fare}
     return jsonify(flight_dict)

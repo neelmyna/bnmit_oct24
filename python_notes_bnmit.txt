@@ -970,19 +970,18 @@ pymysql is used to do database programming such as connectivity and run the vari
 3	23-10	Wed		4		1:30
 4	24-10	Thu		2.5		3:30
 5	25-10	Fri		2.5		3:30
-6	26-10	Sat		2.5		3:30
+6	26-10	Sat		2.5		3:30	Week1 completed 16.5 hours
 7	04-11	Mon		2.5		3:30
-8	05-11	Tue		2		4:00
+8	05-11	Tue		2.5		4:00
 9	06-11	Wed		2.5		3:30
 10	07-11	Thu		2.5		3:30
-11	08-11	Fri		2.5		3:30	1st Assessment
-12  10-11   Sun     3       9 am to 12 pm (Online)
-13	11-11	Mon		2.5		3:30
-14	12-11	Tue		2.5		3:30
-15	13-11	Wed		2.5		3:30
-16	14-11	Thu		2.5		3:30
-17	15-11	Fri		2.5		3:30	2nd Assessment
-18	16-11	Sat		4		9 am to 1 pm (Online)
+11	08-11	Fri		2.5		3:30	Week2 completed 29 hours
+12	11-11	Mon		2.5		3:30	1st Assessment given
+13	12-11	Tue		2.5		3:30
+14	13-11	Wed		4		1:30
+15	14-11	Thu		.5		3:30
+16	15-11	Fri		2.5		7 pm	Final Assessment
+17	16-11	Sat		5		9 am to 3 pm (Online)
 --------------------------------------------------------
 Merge Sort
 IP Array:  23  45  87  12  9  35  55  25  7
@@ -1526,3 +1525,17 @@ mode   = scipy.mode(array)
 print(f'Mean = ', mean)
 print(f'Median = ', median)
 print(f'Mode = ', mode)
+---------------------------------------------
+num = 50
+
+while(num < 50):
+	# do something
+	pass
+else:
+	# do something else
+	pass
+---------------------------------------------
+To enforce elements of same type to encapsulated, we must use array from the module array
+array.array stores elements of same type only.
+
+
