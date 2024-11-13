@@ -1,10 +1,9 @@
-import numpy as np
+list1 = [2, 3, 5]
 
-# nan is not a number
+string = ' '.join(map(str, list1)) # convert a list of items of tyep other than str into a string
+print(string)
+print(type(string))
 
-print(0 * np.nan)
-print(np.nan == np.nan)
-print(np.inf > np.nan)
-print(np.nan - np.nan)
-print(np.nan in set([np.nan]))
-print(0.3 == 3 * 0.1)
+list2 = ['23', '55', '67']
+string = ' '.join(list2) 
+print(string)
