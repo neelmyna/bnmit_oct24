@@ -978,8 +978,8 @@ pymysql is used to do database programming such as connectivity and run the vari
 11	08-11	Fri		2.5		3:30	Week2 completed 29 hours
 12	11-11	Mon		2.5		3:30	1st Assessment given
 13	12-11	Tue		2.5		3:30
-14	13-11	Wed		4		1:30
-15	14-11	Thu		.5		3:30
+14	13-11	Wed		3.5		1:30
+15	14-11	Thu		3		5:00
 16	15-11	Fri		2.5		7 pm	Final Assessment
 17	16-11	Sat		5		9 am to 3 pm (Online)
 --------------------------------------------------------
