@@ -56,7 +56,8 @@ def create_tree(bst):
         bst.add_node(node_values[-1])
 
 def run_app(bst):
-    create_tree(bst)
+    create_tree(b
+                ++---+  +-+-st)
     print('The BST is')
     bst.inorder(bst.root)
     print('\nHeight of the BST is', bst.get_height(bst.root))
