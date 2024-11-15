@@ -1894,3 +1894,103 @@ def run_app(bst):
 bst = BST()
 run_app(bst)
 ---------------------------------------------------------
+DAY16 15-11-2024 FRIDAY
+
+1. Infix to Postfix Program
+Where all operators are of same precedence.
+
+2. Infix to Postfix Program
+Where operators are of different precedence.
+
+3. Infix to Postfix Program
+Where operators are of different precedence and we use paranthesis to override the precedence of operators.
+
+input_str = a - b + c
+
+present_char = c
+
+stk: a b -
+operator: +
+
+postfix_str = a b - c +
+
+i = 0
+until input_str has character:   # a - b + c
+	if i == 0:
+		stk = input_str[i]
+		i++
+	else:
+		stk=post
+		post=''
+	operator = input_str[i]
+	i++
+	present_char = input_str[i]
+	i++
+	postfix_str = stk + present_char + operator
+	stk = ''
+	present_char = ''
+	operator = ''
+	
+itr=1, i=0
+	stk = a
+	i=1
+	opr= -
+	i=2
+	char=b
+	i=3
+	post=a b -
+	stk=char=opr=''
+itr=2, i=3
+	stk=a b -
+	post=''
+	opr=+
+	i=4
+	char=c
+	i=5
+	post= ab-c+
+	
+a+b-c+m
+ab+ - c + m
+ab+c- + m
+ab+c-m+
+----------------
+infix_expr = input('Enter the infix notation expression: ')
+
+i               = 0
+stk             = ''
+postfix_expr    = ''
+present_char    = ''
+operator        = ''
+
+for char in infix_expr:
+	if i == len(infix_expr):
+		break
+	if i == 0:
+		stk = infix_expr[i]
+		i += 1
+	else:
+		stk = postfix_expr
+		postfix_expr = ''
+	operator = infix_expr[i]
+	i += 1
+	present_char = infix_expr[i]
+	i += 1
+	postfix_expr = stk + present_char + operator
+	stk = ''
+	present_char = ''
+	operator = ''
+
+print(f'Postfix Expression = {postfix_expr}')
+-------------------------------------------------------
+postfix_expr 
+stk 
+
+The Stack will only have opeartors in it.
+When ever we find an operand, add it to postfix_expr
+
+until infix_expr has characters:
+	If operator then:
+		if the precedence of current opr in the infix_expr is higher than the operator in the stack, then push it on the top (Do this, if the stack is empty or if the top of stack is '('
+	else
+		pop the operators from the stack that have precedence higher than or equal to the current opr. Add the popped operators to the postfix_expr
+	Now add the current opr on top of the stack
