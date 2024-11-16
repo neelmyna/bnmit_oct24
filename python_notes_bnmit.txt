@@ -1994,3 +1994,63 @@ until infix_expr has characters:
 	else
 		pop the operators from the stack that have precedence higher than or equal to the current opr. Add the popped operators to the postfix_expr
 	Now add the current opr on top of the stack
+
+
+x+y/k-d
+itr=1
+	post=x
+itr=2
+	stk=+
+itr=3
+	post=xy
+itr=4
+	stk=+/
+itr=5
+	post=xyk
+itr=6
+	post=xyk/     stk=+
+itr=7
+	post=xyk/+    stk=''
+itr=8
+	stk=-
+itr=9
+	post=xyk/+d
+itr=10
+	post=xyk/+d-  stk=''
+	
+
+post=xyk
+stk=+/
+
+a + b * c ** d
+Power has higher precedence than * and / and %
+
+a+(b-c)*d^e
+a+ bc- *d^e
+a + bc- * de^
+a + bc-de^*
+abc-de^*+
+-------------------------------------------------------------
+DAY17 SATURDAY 16-11-2024
+
+PANDAS:
+
+* In pandas, the data are value mutable, but not size mutable.
+* Data and the index in an nd array must be of the same length
+* The data in pandas can be dictionary, list, nd array and  primitives/scalar
+
+Problem statement:
+1. When we have the data of employees working for various departments, then to get the average(mean) of their salaries, we use:
+
+employees.groupby('department').salary.mean()
+
+2. When we have the data of employees working for various designations, then to get the average(mean) of their ages, we use:
+
+employees.groupby('designation').age.mean()
+
+DataFrame:
+The data frame in pandas is nothing but the data in any RDBMS table or the SpreadSheets(Worksheets) like MS Excel or Google sheets etc.
+Thus when we draw the data from an excel sheet (.csv file), we get data frame.
+
+pandas.read.csv()
+
